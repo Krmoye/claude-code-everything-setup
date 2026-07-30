@@ -12,8 +12,8 @@
 ## Installation
 
 ```bash
-git clone https://github.com/Krmoye/claude-code-everything-setup.git
-cd claude-code-everything-setup
+git clone https://github.com/Krmoye/claude-code-everything.git
+cd claude-code-everything
 
 # Copy both skills to Claude Code
 cp -r skills/* ~/.claude/skills/
