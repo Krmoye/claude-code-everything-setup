@@ -1,56 +1,46 @@
-# Claude Code Skill: Everything Setup
+# Claude Code Skills: Everything Integration
 
-Setup [Everything](https://www.voidtools.com/) CLI (`es.exe`) for fast file search on Windows in [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+[Everything](https://www.voidtools.com/) CLI integration for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) on Windows — blazing-fast file search.
 
-## What it does
+## Included Skills
 
-This skill guides you through installing and configuring Everything CLI so Claude Code can use `es` for blazing-fast file searches instead of slower alternatives like `find` or `where`.
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| **everything-setup** | `/everything-setup` | Install and configure `es.exe` |
+| **everything** | `/everything` | Quick reference for using `es` commands |
 
 ## Installation
 
-Copy the skill to your Claude Code skills directory:
-
 ```bash
-# Clone the repo
 git clone https://github.com/Krmoye/claude-code-everything-setup.git
 cd claude-code-everything-setup
 
-# Copy skill to Claude Code skills directory
-cp -r skills/everything-setup ~/.claude/skills/
+# Copy both skills to Claude Code
+cp -r skills/* ~/.claude/skills/
 ```
 
-Then restart Claude Code. The skill will be available as `/everything-setup`.
+Then restart Claude Code.
 
 ## Prerequisites
 
-- **Windows** (this skill is Windows-specific)
+- **Windows**
 - **[Everything](https://www.voidtools.com/)** installed and running
 - **Git Bash** (for the wrapper script)
 
-## What the skill does
+## Quick Start
 
-When invoked, it will:
+1. Run `/everything-setup` to install and configure `es.exe`
+2. Then use `/everything` as a reference for search commands
 
-1. Check if Everything is installed and running
-2. Guide you to download `es.exe` (the CLI tool)
-3. Create a Git Bash wrapper script with UTF-8 encoding support
-4. Verify the setup works
-
-## Key features
-
-- **Chinese filename support**: The wrapper script handles GBK → UTF-8 encoding conversion via `iconv`
-- **PATH integration**: Adds `~/bin` to your PATH so `es` works from anywhere
-- **Troubleshooting**: Built-in guidance for common issues
-
-## Usage
-
-In Claude Code, type:
+## Search Examples
 
 ```
-/everything-setup
+es "keyword"                    # Basic search
+es ext:pdf                      # By extension
+es ext:ppt|pptx                 # Multiple extensions
+es -path "C:\Users\Desktop" "report" -n 10  # Limit to directory
+es ext:xlsx -s "date modified"  # Sort by date
 ```
-
-The skill will walk you through the setup process interactively.
 
 ## License
 
